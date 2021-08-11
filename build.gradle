@@ -30,8 +30,10 @@ dependencies {
             [group: 'org.springframework.boot', name: 'spring-boot-starter-security'],
             [group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'],
             [group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity5'],
-            [group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.5.3'],
-            [group: 'com.google.guava', name: 'guava', version: '30.1.1-jre']
+            [group: 'org.springframework.boot', name: 'spring-boot-starter-validation'],
+            [group: 'com.google.guava', name: 'guava', version: '30.1.1-jre'],
+            [group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'],
+            [group: 'javax.xml.bind', name: 'jaxb-api', version: '2.1']
     )
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
