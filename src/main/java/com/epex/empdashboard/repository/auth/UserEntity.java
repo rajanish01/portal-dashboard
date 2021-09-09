@@ -1,13 +1,12 @@
-package com.epex.empdashboard.repository;
+package com.epex.empdashboard.repository.auth;
 
 import com.epex.empdashboard.domain.auth.UserDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.util.UUID;
 
 @Document(collection = "auth_users")
 @Data
@@ -15,13 +14,17 @@ import java.util.UUID;
 @AllArgsConstructor
 public class UserEntity {
     @Id
-    private String id = UUID.randomUUID().toString();
+    private String id;
 
     private String username;
     private String password;
 
-    public UserEntity(UserDTO dto) {
+    @DBRef(lazy = true)
+    private RoleEntity role;
+
+    public UserEntity(UserDTO dto,RoleEntity role) {
         this.setUsername(dto.getUsername());
         this.setPassword(dto.getPassword());
+        this.setRole(role);
     }
 }

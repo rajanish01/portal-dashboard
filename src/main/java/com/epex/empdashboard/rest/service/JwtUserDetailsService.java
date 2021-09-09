@@ -1,7 +1,7 @@
 package com.epex.empdashboard.rest.service;
 
-import com.epex.empdashboard.repository.UserEntity;
-import com.epex.empdashboard.repository.UserRepository;
+import com.epex.empdashboard.repository.auth.UserEntity;
+import com.epex.empdashboard.repository.auth.UserRepository;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;

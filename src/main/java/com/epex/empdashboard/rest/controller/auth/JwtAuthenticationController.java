@@ -1,4 +1,4 @@
-package com.epex.empdashboard.rest.controller;
+package com.epex.empdashboard.rest.controller.auth;
 
 import com.epex.empdashboard.auth.JwtTokenUtil;
 import com.epex.empdashboard.domain.auth.JwtRequest;

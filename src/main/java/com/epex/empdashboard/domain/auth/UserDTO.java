@@ -1,6 +1,7 @@
 package com.epex.empdashboard.domain.auth;
 
-import com.epex.empdashboard.repository.UserEntity;
+import com.epex.empdashboard.repository.auth.UserEntity;
+import lib.shared.enums.ERole;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,10 +19,14 @@ public class UserDTO {
     @NotEmpty(message = "Password Can not Be Null/Empty !")
     private String password;
 
+    @NotEmpty(message = "Please Specify Proper Role For User !")
+    private String role;
+
     public UserDTO(UserEntity entity) {
         this.setId(entity.getId());
         this.setUsername(entity.getUsername());
         this.setPassword(entity.getPassword());
+        this.setRole(entity.getRole().getRole().name());
     }
 
 }

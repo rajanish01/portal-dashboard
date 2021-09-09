@@ -1,8 +1,13 @@
 package com.epex.empdashboard.auth;
 
+import com.epex.empdashboard.repository.auth.RoleEntity;
+import com.epex.empdashboard.repository.auth.UserEntity;
+import com.epex.empdashboard.repository.auth.UserRepository;
+import com.google.gson.Gson;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -11,6 +16,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Function;
 
 @Component
@@ -22,6 +28,9 @@ public class JwtTokenUtil implements Serializable {
 
     @Value("${jwt.secret}")
     private String secret;
+
+    @Autowired
+    private UserRepository userRepository;
 
     //retrieve username from jwt token
     public String getUsernameFromToken(String token) {
@@ -52,6 +61,8 @@ public class JwtTokenUtil implements Serializable {
     //generate token for user
     public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
+        Optional<UserEntity> user = userRepository.findByUsername(userDetails.getUsername());
+        claims.put("privilege",new Gson().toJson(user.get().getRole().getPrivileges()));
         return doGenerateToken(claims, userDetails.getUsername());
     }
 
@@ -61,8 +72,11 @@ public class JwtTokenUtil implements Serializable {
     //3. According to JWS Compact Serialization(https://tools.ietf.org/html/draft-ietf-jose-json-web-signature-41#section-3.1)
     //   compaction of the JWT to a URL-safe string
     private String doGenerateToken(Map<String, Object> claims, String subject) {
-
-        return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
+        return Jwts
+                .builder()
+                .setClaims(claims)
+                .setSubject(subject)
+                .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY * 1000))
                 .signWith(SignatureAlgorithm.HS512, secret).compact();
     }
