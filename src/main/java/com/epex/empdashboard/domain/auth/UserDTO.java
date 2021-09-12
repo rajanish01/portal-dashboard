@@ -1,8 +1,8 @@
 package com.epex.empdashboard.domain.auth;
 
+import com.epex.common.enums.ERole;
 import com.epex.empdashboard.repository.auth.Role;
 import com.epex.empdashboard.repository.auth.User;
-import lib.shared.enums.ERole;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

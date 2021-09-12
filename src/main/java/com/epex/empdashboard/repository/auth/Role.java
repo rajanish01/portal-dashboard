@@ -1,6 +1,6 @@
 package com.epex.empdashboard.repository.auth;
 
-import lib.shared.enums.ERole;
+import com.epex.common.enums.ERole;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

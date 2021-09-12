@@ -1,6 +1,6 @@
 package com.epex.empdashboard.repository.auth;
 
-import lib.shared.enums.ERole;
+import com.epex.common.enums.ERole;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
