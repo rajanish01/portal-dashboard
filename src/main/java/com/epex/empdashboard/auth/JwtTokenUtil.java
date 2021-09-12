@@ -76,7 +76,8 @@ public class JwtTokenUtil implements Serializable {
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 
-    public UsernamePasswordAuthenticationToken getAuthenticationToken(final String token, final Authentication existingAuth, final UserDetails userDetails) {
+    public UsernamePasswordAuthenticationToken getAuthenticationToken(final String token, final Authentication existingAuth,
+                                                                      final UserDetails userDetails) {
         final JwtParser jwtParser = Jwts.parser().setSigningKey(SIGNING_KEY);
         final Jws<Claims> claimsJws = jwtParser.parseClaimsJws(token);
         final Claims claims = claimsJws.getBody();

@@ -1,5 +1,7 @@
 package com.epex.empdashboard.rest.controller;
 
+import com.epex.empdashboard.auth.annotation.ReadAccess;
+import com.epex.empdashboard.auth.annotation.WriteAccess;
 import com.epex.empdashboard.domain.auth.UserDTO;
 import com.epex.empdashboard.rest.service.UserService;
 import org.slf4j.Logger;
@@ -25,6 +27,7 @@ public class UserRestController {
     }
 
     @PostMapping
+    @WriteAccess
     public ResponseEntity<?> createUser(@Valid @RequestBody UserDTO createUserRequest) {
         try {
             log.info("Creating User.....");
@@ -35,6 +38,7 @@ public class UserRestController {
     }
 
     @GetMapping
+    @ReadAccess
     public ResponseEntity<?> getUser(@RequestParam @NotEmpty final String username) {
         try {
             return ResponseEntity.ok(userService.findOne(username));
