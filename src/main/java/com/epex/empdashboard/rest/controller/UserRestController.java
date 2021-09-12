@@ -27,6 +27,7 @@ public class UserRestController {
     }
 
     @PostMapping
+    @WriteAccess
     public ResponseEntity<?> createUser(@Valid @RequestBody UserDTO createUserRequest) {
         try {
             log.info("Creating User.....");
