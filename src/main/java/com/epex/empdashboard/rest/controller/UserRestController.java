@@ -25,10 +25,10 @@ public class UserRestController {
     }
 
     @PostMapping
-    public ResponseEntity<?> createUser(@Valid @RequestBody UserDTO createUserRequestPayload) {
+    public ResponseEntity<?> createUser(@Valid @RequestBody UserDTO createUserRequest) {
         try {
             log.info("Creating User.....");
-            return ResponseEntity.accepted().body(userService.createUser(createUserRequestPayload));
+            return ResponseEntity.accepted().body(userService.save(createUserRequest));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
@@ -37,7 +37,7 @@ public class UserRestController {
     @GetMapping
     public ResponseEntity<?> getUser(@RequestParam @NotEmpty final String username) {
         try {
-            return ResponseEntity.ok(userService.getUser(username));
+            return ResponseEntity.ok(userService.findOne(username));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
