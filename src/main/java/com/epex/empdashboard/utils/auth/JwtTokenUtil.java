@@ -1,4 +1,4 @@
-package com.epex.empdashboard.auth;
+package com.epex.empdashboard.utils.auth;
 
 import io.jsonwebtoken.*;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,4 +1,4 @@
-package com.epex.empdashboard.auth;
+package com.epex.empdashboard.utils.auth;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;

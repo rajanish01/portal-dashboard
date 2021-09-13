@@ -1,7 +1,7 @@
 package com.epex.empdashboard.filters;
 
-import com.epex.empdashboard.auth.JwtTokenUtil;
-import com.epex.empdashboard.rest.service.UserService;
+import com.epex.empdashboard.utils.auth.JwtTokenUtil;
+import com.epex.empdashboard.rest.service.auth.UserService;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.SignatureException;
 import org.slf4j.Logger;

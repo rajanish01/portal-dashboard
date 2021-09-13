@@ -3,7 +3,7 @@ package com.epex.empdashboard.rest.controller;
 import com.epex.common.annotation.ReadAccess;
 import com.epex.common.annotation.WriteAccess;
 import com.epex.empdashboard.domain.auth.UserDTO;
-import com.epex.empdashboard.rest.service.UserService;
+import com.epex.empdashboard.rest.service.auth.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

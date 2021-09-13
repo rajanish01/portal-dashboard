@@ -1,6 +1,6 @@
 package com.epex.empdashboard.config;
 
-import com.epex.empdashboard.auth.JwtAuthenticationEntryPoint;
+import com.epex.empdashboard.utils.auth.JwtAuthenticationEntryPoint;
 import com.epex.empdashboard.filters.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

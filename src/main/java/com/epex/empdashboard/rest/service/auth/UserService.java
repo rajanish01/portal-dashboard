@@ -1,4 +1,4 @@
-package com.epex.empdashboard.rest.service;
+package com.epex.empdashboard.rest.service.auth;
 
 import com.epex.empdashboard.domain.auth.UserDTO;
 import com.epex.empdashboard.repository.auth.Role;

@@ -1,6 +1,6 @@
 package com.epex.empdashboard.rest.controller.auth;
 
-import com.epex.empdashboard.auth.JwtTokenUtil;
+import com.epex.empdashboard.utils.auth.JwtTokenUtil;
 import com.epex.empdashboard.domain.auth.AuthToken;
 import com.epex.empdashboard.domain.auth.LoginUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +42,7 @@ public class AuthenticationRestController {
             throw new Exception("INVALID CREDENTIALS : " + e.getMessage());
         }
         SecurityContextHolder.getContext().setAuthentication(authentication);
+
         final String token = jwtTokenUtil.generateToken(authentication);
         return ResponseEntity.ok(new AuthToken(token));
     }
