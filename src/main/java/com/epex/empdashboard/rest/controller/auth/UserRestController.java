@@ -1,4 +1,4 @@
-package com.epex.empdashboard.rest.controller;
+package com.epex.empdashboard.rest.controller.auth;
 
 import com.epex.common.annotation.ReadAccess;
 import com.epex.common.annotation.WriteAccess;
