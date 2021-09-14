@@ -4,10 +4,10 @@
 <head th:replace="fragments/head_with_bootstrap_js"></head>
 
 <body>
-    <div class="container">
-        <div th:replace="fragments/navbar_main"></div>
-        <div th:insert="fragments/login_popup"></div>
-    </div>
+    <div th:replace="fragments/navbar_main"></div>
+    <div th:replace="fragments/login_popup_modal"></div>
+    <div th:insert="fragments/alerts"></div>
+
     <script type="text/javascript" th:src="@{/js/dashboard_home.js}"></script>
     <script type="text/javascript" th:src="@{/js/http_request_handler.js}"></script>
 </body>
