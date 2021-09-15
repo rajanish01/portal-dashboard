@@ -1,7 +1,9 @@
-package com.epex.empdashboard.rest.controller;
+package com.epex.empdashboard.rest.controller.auth;
 
+import com.epex.common.annotation.ReadAccess;
+import com.epex.common.annotation.WriteAccess;
 import com.epex.empdashboard.domain.auth.UserDTO;
-import com.epex.empdashboard.rest.service.UserService;
+import com.epex.empdashboard.rest.service.auth.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,19 +27,21 @@ public class UserRestController {
     }
 
     @PostMapping
-    public ResponseEntity<?> createUser(@Valid @RequestBody UserDTO createUserRequestPayload) {
+    @WriteAccess
+    public ResponseEntity<?> createUser(@Valid @RequestBody UserDTO createUserRequest) {
         try {
             log.info("Creating User.....");
-            return ResponseEntity.accepted().body(userService.createUser(createUserRequestPayload));
+            return ResponseEntity.accepted().body(userService.save(createUserRequest));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 
     @GetMapping
+    @ReadAccess
     public ResponseEntity<?> getUser(@RequestParam @NotEmpty final String username) {
         try {
-            return ResponseEntity.ok(userService.getUser(username));
+            return ResponseEntity.ok(userService.findOne(username));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
