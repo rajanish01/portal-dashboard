@@ -1,0 +1,22 @@
+.alert {
+  display: none;
+  float: right;
+  margin-top: 0.5rem;
+}
+
+.separator {
+  margin-top: 1rem;
+}
+
+.pad {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.label-color {
+  font-weight: bold;
+  border: 1px;
+  border-radius: 0.25rem;
+  background-color: cadetblue;
+  background-color: rgba(86, 61, 124, 0.15);
+}

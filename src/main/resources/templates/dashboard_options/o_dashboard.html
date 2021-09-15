@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col-md-12">
+        <h4>Hi Rajanish !</h4>
+        <hr>
+    </div>
+
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card border border-success">
+                    <img th:src="@{/img/profile.jpg}" class="card-img-top" alt="profile pic">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="card-detail list-group-item">
+                                <h3>Rajanish Ranjan</h3>
+                            </li>
+                            <li class="card-detail list-group-item">
+                                <strong>Senior Technology Analyst</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <form>
+                    <div class="form-group row">
+                        <label for="username" class="col-sm-3 col-form-label label-color">Username</label>
+                        <div class="col-sm-9">
+                            <input type="text" readonly class="form-control" id="username" value="rj007">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-3 col-form-label label-color">Password</label>
+                        <div class="col-sm-9 input-group">
+                            <input type="password" readonly class="form-control" id="inputPassword" value="password">
+                            <div th:replace="fragments/edit_button"></div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-3 col-form-label label-color">Email</label>
+                        <div class="col-sm-9">
+                            <input type="text" readonly class="form-control" id="staticEmail" value="email@example.com">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="dob" class="col-sm-3 col-form-label label-color">Date Of Birth</label>
+                        <div class="col-sm-9 input-group">
+                            <input type="text" readonly class="form-control" id="dob" value="27 February 1996">
+                            <div th:replace="fragments/edit_button"></div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="doj" class="col-sm-3 col-form-label label-color">Date Of Joining</label>
+                        <div class="col-sm-9">
+                            <input type="text" readonly class="form-control" id="doj" value="17 September 2018">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="company" class="col-sm-3 col-form-label label-color">Company/Organization</label>
+                        <div class="col-sm-9 input-group">
+                            <input type="text" readonly class="form-control" id="company" value="OakNorth">
+                            <div th:replace="fragments/edit_button"></div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="location" class="col-sm-3 col-form-label label-color">Location</label>
+                        <div class="col-sm-9 input-group">
+                            <input type="text" readonly class="form-control" id="location" value="Bangalore">
+                            <div th:replace="fragments/edit_button"></div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="access" class="col-sm-3 col-form-label label-color">Access Level</label>
+                        <div class="col-sm-9">
+                            <input type="text" readonly class="form-control" id="access" value="ADMIN">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

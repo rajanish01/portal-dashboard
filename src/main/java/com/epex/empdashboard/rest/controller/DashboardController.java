@@ -11,7 +11,7 @@ public class DashboardController {
 
     @GetMapping
     public String getDashboard(Model model) {
-        return "dashboard_home";
+        return "home";
     }
 
 }
